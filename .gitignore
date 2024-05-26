@@ -1,0 +1,6 @@
+*.sublime*
+*.env
+/samples
+
+*.sqlite
+__pycache__

@@ -1,0 +1,6 @@
+default_tags = [
+    {name = 'hi-hat', filters= ['hihat', 'hi-hat', 'chh', 'ohh', 'phh', 'hi hat']},
+    {name='closed', filters=['chh', 'closed']},
+    {name='kick', filters=['kick', 'bd', 'bassdrum', 'bass drum']},
+    {name='snare', filters=['snare']}
+]
