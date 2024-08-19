@@ -1,6 +1,11 @@
 default_tags = [
-    {name = 'hi-hat', filters= ['hihat', 'hi-hat', 'chh', 'ohh', 'phh', 'hi hat']},
-    {name='closed', filters=['chh', 'closed']},
+    {name = 'hi-hat', filters= ['hihat', 'hi-hat', 'chh', 'ohh', 'phh', 'hi hat', 'chat', 'ophat', ' hat', 'clsd', 'pdhat']},
+    {name= 'closed', filters=['clsd', 'closed']},
+    {name= 'open', filters=['opn', 'open']},
     {name='kick', filters=['kick', 'bd', 'bassdrum', 'bass drum']},
-    {name='snare', filters=['snare']}
+    {name='snare', filters=['snare', 'rim', 'snare', 'snr']},
+    {name='rim', filters=['rim']},
+    {name='heavy'},
+    {name='techno', filter=['techno']},
+    {name='rock', filters=['rock']},
 ]

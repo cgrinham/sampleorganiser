@@ -1,5 +1,6 @@
 import os
 import logging
+import threading
 
 import sqlalchemy as sa
 import sqlalchemy.orm
@@ -7,9 +8,11 @@ from sqlalchemy import select
 import playsound
 
 import models
+import audio
 
 MENU_LOGGER = logging.getLogger('sample_organiser/menu')
 LOGGER = logging.getLogger('sample_organiser')
+USE_JACK = True
 
 
 AUTO_TAG_CACHE = []
@@ -66,10 +69,15 @@ def find_samples_in_dir(session, path):
     return
 
 
-def play_sample(sample):
-    MENU_LOGGER.info(f"Play sample: {sample.path}")
+def play_sample_handler(sample):
     playsound.playsound(sample.path)
 
-    MENU_LOGGER.info("---------")
-    MENU_LOGGER.info("Playing finished")
-    MENU_LOGGER.info("---------")
+
+def play_sample(sample, wait=False):
+    if USE_JACK:
+        audio.play_sample(sample)
+    else:
+        if wait:
+            play_sample_handler(sample)
+        else:
+            threading.Thread(target=play_sample_handler, args=(sample,)).start()

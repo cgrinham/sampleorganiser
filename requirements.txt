@@ -1,2 +1,5 @@
 sqlalchemy
 playsound
+JACK-Client
+soundfile
+numpy
